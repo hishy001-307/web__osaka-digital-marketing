@@ -516,7 +516,7 @@ figure {
 }
 
 .cta__container {
-  background: #000;
+  background: var(--clr-white);
   width: 100%;
   margin: 60px;
 }

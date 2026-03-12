@@ -268,10 +268,15 @@ figure {
 }
 
 .choice__photo--right {
-  width: 200px;
-  height: 200px;
+  width: 20vw;
+  min-width: 150px;
   align-self: center;
   transform: translateX(40px);
+}
+
+.choice__photo--right img {
+  width: 100%;
+  height: auto;
 }
 
 .choice__content {
