@@ -2,28 +2,31 @@
    Design Tokens
    ============================================== */
 :root {
-  --clr-green:       #44BF55;
-  --clr-green-dark:  #1A8B2F;
-  --clr-yellow:      #D9E600;
-  --clr-white:       #FFFFFF;
-  --clr-black:       #1A1A1A;
-  --clr-text:        #1A1A1A;
+  --clr-green: #54B565;
+  --clr-green-dark: #00A469;
+  --clr-yellow: #FFE34D;
+  --clr-white: #FFFFFF;
+  --clr-black: #1A1A1A;
+  --clr-text: #FFFFFF;
 
   --ff-base: 'Zen Maru Gothic', sans-serif;
-  --fs-xs:   0.75rem;
-  --fs-sm:   0.9rem;
-  --fs-base: 1rem;
-  --fs-md:   1.125rem;
-  --fs-lg:   1.5rem;
-  --fs-xl:   2rem;
-  --fs-2xl:  2.5rem;
-  --fs-3xl:  3.5rem;
-  --fw-reg:  400;
-  --fw-med:  500;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.9rem;
+  --fs-base: 24px;
+  --fs-md: 1.125rem;
+  --fs-lg: 32px;
+  --fs-24: 24px;
+  --fs-40: 40px;
+  --fs-60: 60px;
+  --fs-xl: 50px;
+  --fs-2xl: 1rem;
+  --fs-3xl: 96px;
+  --fw-reg: 400;
+  --fw-med: 500;
   --fw-bold: 700;
-  --fw-blk:  900;
+  --fw-blk: 900;
 
-  --sp-8:  0.5rem;
+  --sp-8: 0.5rem;
   --sp-12: 0.75rem;
   --sp-16: 1rem;
   --sp-24: 1.5rem;
@@ -33,14 +36,16 @@
   --sp-64: 4rem;
   --sp-80: 5rem;
 
-  --w-inner:  960px;
-  --r-full:   9999px;
+  --w-inner: 960px;
+  --r-full: 9999px;
 }
 
 /* ==============================================
    Reset & Base
    ============================================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -54,10 +59,23 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img    { display: block; max-width: 100%; height: auto; }
-ul     { list-style: none; }
-a      { text-decoration: none; }
-figure { margin: 0; }
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+figure {
+  margin: 0;
+}
 
 /* ==============================================
    Wave utility
@@ -75,7 +93,6 @@ figure { margin: 0; }
 }
 
 .hero__wave svg,
-.message__wave-top svg,
 .message__wave-bottom svg,
 .choice__wave-top svg,
 .choice__wave-bottom svg,
@@ -86,20 +103,25 @@ figure { margin: 0; }
   display: block;
 }
 
+.message__wave-top svg {
+  width: 100%;
+  display: block;
+  height: 20vh;
+}
+
 /* ==============================================
    Hero
    ============================================== */
 .hero {
   position: relative;
-  background: var(--clr-green);
+  background: var(--clr-green-dark);
   min-height: 100vh;
-  overflow: hidden;
 }
 
 .hero__photo {
   position: absolute;
   border-radius: 50%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .hero__photo img {
@@ -109,35 +131,37 @@ figure { margin: 0; }
 }
 
 .hero__photo--tl {
-  width: 220px;
-  height: 220px;
-  top: 48px;
-  left: 48px;
+  width: 30vw;
+  height: 30vw;
+  top: -2vw;
+  left: -2vw;
 }
 
 .hero__photo--tr {
-  width: 180px;
-  height: 180px;
-  top: 32px;
-  right: 200px;
+  width: 20vw;
+  height: 20vw;
+  top: -0.5vw;
+  right: -0.5vw;
 }
 
 .hero__photo--cr {
-  width: 300px;
-  height: 300px;
-  top: 50%;
-  right: 64px;
-  transform: translateY(-30%);
+  width: 40vw;
+  height: 40vw;
+  bottom: -10vh;
+  right: 10vw;
+  z-index: 5;
+
 }
 
 .hero__text {
   position: absolute;
-  bottom: 140px;
+  bottom: 2vh;
   left: 80px;
+  ;
 }
 
 .hero__catch {
-  font-size: var(--fs-3xl);
+  font-size: clamp(32px, 10vw, var(--fs-3xl));
   font-weight: var(--fw-blk);
   color: var(--clr-white);
   line-height: 1.35;
@@ -152,6 +176,7 @@ figure { margin: 0; }
   bottom: 0;
   left: 0;
   right: 0;
+  display: none;
 }
 
 /* ==============================================
@@ -159,13 +184,14 @@ figure { margin: 0; }
    ============================================== */
 .message {
   background: var(--clr-green);
+  position: relative;
 }
 
 .message__inner {
-  position: relative;
-  max-width: var(--w-inner);
+
+  max-width: 1200px;
   margin: 0 auto;
-  padding: var(--sp-48) var(--sp-48) var(--sp-80);
+  padding: var(--sp-24) var(--sp-48) var(--sp-32);
 }
 
 .message__title {
@@ -174,6 +200,7 @@ figure { margin: 0; }
   color: var(--clr-white);
   line-height: 1.6;
   margin-bottom: var(--sp-40);
+  text-align: center;
 }
 
 .message__body {
@@ -189,30 +216,30 @@ figure { margin: 0; }
 
 .message__photo {
   position: absolute;
-  bottom: var(--sp-40);
-  left: var(--sp-48);
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
+  bottom: -10vh;
+  left: -2vh;
+  width: 20vw;
+  min-width: 150px;
+  z-index: 5;
 }
 
 .message__photo img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
 }
+
 
 /* ==============================================
    Choice
    ============================================== */
 .choice {
-  background: var(--clr-green);
+  background: var(--clr-green-dark);
+  position: relative;
 }
 
 .choice__layout {
   display: grid;
-  grid-template-columns: 120px 1fr 120px;
+  grid-template-columns: 1fr;
   align-items: center;
   max-width: var(--w-inner);
   margin: 0 auto;
@@ -221,12 +248,14 @@ figure { margin: 0; }
 }
 
 .choice__photo {
+  position: absolute;
   border-radius: 50%;
-  overflow: hidden;
+  /* overflow: hidden; */
+  right: -2vh;
+  bottom: -10vh;
 }
 
 .choice__photo img {
-  width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -247,10 +276,11 @@ figure { margin: 0; }
 
 .choice__content {
   padding: 0 var(--sp-24);
+  text-align: center;
 }
 
 .choice__kicker {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-40);
   font-weight: var(--fw-bold);
   color: var(--clr-yellow);
   margin-bottom: var(--sp-12);
@@ -258,7 +288,7 @@ figure { margin: 0; }
 }
 
 .choice__title {
-  font-size: var(--fs-2xl);
+  font-size: var(--fs-60);
   font-weight: var(--fw-blk);
   color: var(--clr-white);
   line-height: 1.3;
@@ -269,9 +299,14 @@ figure { margin: 0; }
   display: flex;
   flex-direction: column;
   gap: var(--sp-16);
-  font-size: var(--fs-sm);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-med);
   color: var(--clr-white);
   line-height: 2;
+}
+
+.choice__highlight {
+  font-weight: var(--fw-blk);
 }
 
 /* ==============================================
@@ -289,7 +324,7 @@ figure { margin: 0; }
 
 .example__kicker {
   text-align: center;
-  font-size: var(--fs-sm);
+  font-size: var(--fs-40);
   font-weight: var(--fw-bold);
   color: var(--clr-yellow);
   margin-bottom: var(--sp-12);
@@ -298,7 +333,7 @@ figure { margin: 0; }
 
 .example__title {
   text-align: center;
-  font-size: var(--fs-2xl);
+  font-size: var(--fs-60);
   font-weight: var(--fw-blk);
   color: var(--clr-white);
   line-height: 1.3;
@@ -319,8 +354,8 @@ figure { margin: 0; }
 }
 
 .example__icon {
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -362,14 +397,14 @@ figure { margin: 0; }
 }
 
 .cta__title {
-  font-size: var(--fs-2xl);
+  font-size: var(--fs-60);
   font-weight: var(--fw-blk);
   color: var(--clr-white);
   line-height: 1.5;
 }
 
 .cta__kicker {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-40);
   font-weight: var(--fw-bold);
   color: var(--clr-yellow);
   letter-spacing: 0.05em;
@@ -379,13 +414,14 @@ figure { margin: 0; }
   display: inline-block;
   border: 2px solid var(--clr-white);
   color: var(--clr-white);
-  font-size: var(--fs-sm);
+  font-size: var(--fs-24);
   font-weight: var(--fw-med);
   font-family: var(--ff-base);
   padding: var(--sp-12) var(--sp-32);
   border-radius: var(--r-full);
   line-height: 1.6;
   transition: background 0.25s ease, color 0.25s ease;
+  background-color: var(--clr-green);
 }
 
 .cta__btn:hover {

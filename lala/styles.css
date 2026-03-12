@@ -2,6 +2,7 @@
    Design Tokens
    ============================================== */
 :root {
+  --clr-green:       #01DB85;
   --clr-blue-dark:   #1533D9;
   --clr-blue-mid:    #29AAFF;
   --clr-blue-light:  #00CCFF;
@@ -103,15 +104,11 @@ mark   { background: none; color: inherit; }
 
 .hero__catch-line {
   display: block;
-  font-size: var(--fs-2xl);
+  font-size: 96px;
   color: var(--clr-white);
   -webkit-text-stroke: 1.5px var(--clr-blue-dark);
   paint-order: stroke fill;
   line-height: 1.2;
-}
-
-.hero__catch-line--sm {
-  font-size: var(--fs-xl);
 }
 
 .hero__hl {
@@ -121,6 +118,7 @@ mark   { background: none; color: inherit; }
 
 .hero__hl--accent {
   color: var(--clr-cyan);
+  font-size: 128px;
 }
 
 /* ==============================================
@@ -153,13 +151,13 @@ mark   { background: none; color: inherit; }
 }
 
 .question__list li {
-  font-size: var(--fs-md);
+  font-size: 40px;
   font-weight: var(--fw-bold);
   color: var(--clr-white);
 }
 
 .question__sub {
-  font-size: var(--fs-base);
+  font-size: 36px;
   color: var(--clr-white);
   line-height: 1.9;
   margin-bottom: var(--sp-32);
@@ -167,7 +165,7 @@ mark   { background: none; color: inherit; }
 
 .question__title {
   font-family: var(--ff-display);
-  font-size: var(--fs-3xl);
+  font-size: 64px;
   color: var(--clr-white);
   line-height: 1.3;
 }
@@ -187,21 +185,21 @@ mark   { background: none; color: inherit; }
 
 .message__title {
   font-family: var(--ff-display);
-  font-size: var(--fs-xl);
+  font-size: 40px;
   color: var(--clr-blue-navy);
   line-height: 1.6;
   margin-bottom: var(--sp-40);
 }
 
 .message__hl {
-  color: var(--clr-white);
+  color: var(--clr-green);
 }
 
 .message__body {
   display: flex;
   flex-direction: column;
   gap: var(--sp-20);
-  font-size: var(--fs-base);
+  font-size: 24px;
   color: var(--clr-blue-navy);
   line-height: 2;
   margin-bottom: var(--sp-48);
@@ -211,7 +209,6 @@ mark   { background: none; color: inherit; }
   background: var(--clr-cyan);
   color: var(--clr-blue-navy);
   padding: 0 var(--sp-8);
-  border-radius: var(--r-sm);
 }
 
 .message__question {
@@ -266,7 +263,6 @@ mark   { background: none; color: inherit; }
   background: var(--clr-cyan);
   color: var(--clr-blue-navy);
   padding: 0 var(--sp-8);
-  border-radius: var(--r-sm);
 }
 
 .general__compare-title {
@@ -376,6 +372,7 @@ mark   { background: none; color: inherit; }
   padding: var(--sp-32);
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--sp-16);
 }
 
@@ -391,20 +388,12 @@ mark   { background: none; color: inherit; }
   font-size: var(--fs-base);
   font-weight: var(--fw-bold);
   padding: var(--sp-8) var(--sp-16);
-  border-radius: var(--r-sm);
-  align-self: flex-start;
+  background: var(--clr-blue-dark);
 }
 
-.unique__tag--purple { background: var(--clr-tag-purple); }
-.unique__tag--teal   { background: var(--clr-tag-teal); }
-.unique__tag--green  { background: var(--clr-tag-green); }
-.unique__tag--indigo { background: var(--clr-tag-indigo); }
-.unique__tag--pink   { background: var(--clr-tag-pink); }
-.unique__tag--orange { background: var(--clr-tag-orange); }
-
 .unique__icon {
-  width: 80px;
-  height: 80px;
+  width: 200px;
+  height: 200px;
 }
 
 .unique__icon img {
