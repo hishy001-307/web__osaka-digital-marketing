@@ -249,34 +249,24 @@ figure {
 
 .choice__photo {
   position: absolute;
-  border-radius: 50%;
-  /* overflow: hidden; */
-  right: -2vh;
-  bottom: -10vh;
 }
 
 .choice__photo img {
-  height: 100%;
-  object-fit: cover;
+  width: 100%;
+  height: auto;
 }
 
 .choice__photo--left {
   width: 160px;
-  height: 160px;
-  align-self: end;
-  transform: translateX(-40px);
+  left: -2vh;
+  bottom: -10vh;
 }
 
 .choice__photo--right {
   width: 20vw;
   min-width: 150px;
-  align-self: center;
-  transform: translateX(40px);
-}
-
-.choice__photo--right img {
-  width: 100%;
-  height: auto;
+  right: -2vh;
+  bottom: -10vh;
 }
 
 .choice__content {
@@ -319,6 +309,7 @@ figure {
    ============================================== */
 .example {
   background: var(--clr-green);
+  margin-top: -1px;
 }
 
 .example__inner {
